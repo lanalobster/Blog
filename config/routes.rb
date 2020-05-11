@@ -3,9 +3,13 @@ Rails.application.routes.draw do
   
   resources :articles
   
-  root 'welcome#index'
+  root 'pages#index'
 
   resources :articles do
     resources :comments
   end
+
+  resources :users
+
+  get 'about', to: 'pages#about'
 end
