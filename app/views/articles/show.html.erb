@@ -1,12 +1,11 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title"><%= @article.title %></h3>
+    <p class="card-text"></p>
+    <hr>
+    <%= @article.text %>
+  </div>
+</div>
 
 <h2>Comments</h2>
 <%= render @article.comments %>
