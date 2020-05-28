@@ -3,5 +3,5 @@ class Comment < ApplicationRecord
   validates :commenter, presence: true,
     length: { minimum: 3, maximum: 30 }
   validates :body, presence: true,
-  length: { minimum: 3, maximum: 30 }
+  length: { minimum: 3, maximum: 500 }
 end

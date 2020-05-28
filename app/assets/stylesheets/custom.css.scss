@@ -1,5 +1,5 @@
 body{
-    background-color: white;
+    background-color: #ECECEC;
 }
 .bg-custom {
     background-color: #222222;
@@ -22,21 +22,7 @@ body{
 }
 
 #logo:hover {
- //color: #868686;
     text-decoration: none;
-}
-
-.article-body {
-    border-top: 1px solid #eaeaea;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin: 0.5em;
-}
-
-.article-title {
-    font-weight: bold;
-    font-size: 1.5em;
-    margin: 0.5em;
 }
 
 .page-title {
@@ -46,7 +32,47 @@ body{
 
 .card {
     margin: 0.5em;
+    background-color: white;
 }
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.article-link {
+    color: #222222;
+}
+
+.article-link:hover {
+    color: #222222;
+    text-decoration: none;
+}
+
+.article-body {
+    border-top: 1px solid #eaeaea;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.article-title {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+
+
+
+
+
+
+
+
+// .article-link:hover{
+//     text-decoration: none;
+//     color: white !important;
+// }
+
+
 // .article-actions {
 //  border-top: 1px solid #eaeaea;
 //  padding-top: 5px;
