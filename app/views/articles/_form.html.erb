@@ -1,28 +1,19 @@
-  <div class="container-fluid pt-3">
-  <div class="col-xs-12">
-    <h1>Create a new article:</h1>
-    <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |form| %>
-    <div class="form-group">
-      <div class="control-label col-sm-2">
-        <%= form.label :title %>
-      </div>
-      <div class="col-sm-6">
-        <%= form.text_field :title, class: "form-control", placeholder: "Title of article", autofocus: true %>
-      </div>
+
+<div class="container">
+  <h1 class="page-title">Create a new article</h1>
+   <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |form| %>
+    <div class="form-group control-label">
+      <%= form.label :title %>
     </div>
     <div class="form-group">
-      <div class="control-label col-sm-2">
-        <%= form.label :text %>
-      </div>
-      <div class="col-sm-6">
-        <%= form.text_area :text, rows: 10, class: "form-control", placeholder: "Text of article" %>
-      </div>
+      <%= form.text_field :title, class: "form-control", placeholder: "Title of the article", autofocus: true %>
+    </div>
+    <div class="form-group control-label">
+      <%= form.label :text %>
     </div>
     <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <%= form.submit class: 'btn btn-primary btn-large' %>
-      </div>
+      <%= form.text_area :text, rows: 10, class: "form-control", placeholder: "Text of the article" %>
     </div>
-  <% end %>
-  </div>
-  </div>
+    <%= form.submit class: 'btn btn-primary btn-large' %>
+   <% end %>
+</div>
