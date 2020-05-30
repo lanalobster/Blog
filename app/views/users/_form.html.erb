@@ -2,15 +2,16 @@
 
 <div class="main-block">
   <div class="central-block">
-    <%= form_for(@user, :html => {class: "registration-form", role: "form"}) do |f| %>
+    <%= form_for(@user, :html => {class: "form", role: "form"}) do |f| %>
 
       <div class="form-group">
         <div class="label">
           <%= f.label :username %>
         </div>
-      <div class = "nick-line">
-          <%= f.text_field :username, class: "form-control", placeholder: "Enter username", autofocus: true %>
-          <button type="button" id="generate-button" class="btn btn-default generate-button">Generate</button>
+        <div class = "nick-line">
+            <%= f.text_field :username, class: "form-control", placeholder: "Enter username", autofocus: true %>
+            <button type="button" id="generate-button" class="btn btn-default generate-button">Generate</button>
+        </div>
       </div>
 
       <div class="form-group">
@@ -34,10 +35,7 @@
         <%= f.password_field :repeat_password, class: "form-control", placeholder: "Enter password again" %>
       </div>  
 
-      <div class="form-group">
-       <%= f.submit(@user.new_record?  ? "Sign up" : "Update account", class: ' registration-button') %>
-     </div>
-
+      <%= f.submit(@user.new_record?  ? "Sign up" : "Update account", class: 'button') %>
     <% end %>
   </div>
 </div>  

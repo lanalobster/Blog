@@ -1,6 +1,6 @@
 <div class="main-block">
     <div class="central-block">
-        <%= form_for(:session, :html => {class: "login-form{", role: "form"}, url: login_path) do |f| %>
+        <%= form_for(:session, :html => {class: "form", role: "form"}, url: login_path) do |f| %>
            
             <div class="form-group">
                 <div class="label">
@@ -16,9 +16,7 @@
                 <%= f.password_field :password, class: "form-control", placeholder: "Enter password", autocomplete: "off" %>
             </div>  
 
-            <div class="form-group">
-                <%= f.submit "Log in", class: 'login-button' %>
-            </div>
+            <%= f.submit "Log in", class: 'button' %>
          <% end %>
     </div>
 </div>  

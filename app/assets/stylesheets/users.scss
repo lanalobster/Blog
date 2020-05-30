@@ -26,7 +26,6 @@
     height: auto;
 }
 
-
 h2 {
     align-self: center;
     color:white;
@@ -35,7 +34,7 @@ h2 {
     padding-top: 10px;
 }
 
-.registration-form{
+form{
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -47,16 +46,6 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.generate-button{
-    align-self: flex-end;
-    background-color: #f4511e;
-    color: white;
-    border: none;
-    cursor: pointer;
-    height: 30px;
-    width: 30%; 
 }
 
 .form-control {
@@ -74,7 +63,17 @@ h2 {
     color: white;
 }
 
-.registration-button {
+.generate-button{
+    align-self: flex-end;
+    background-color: #f4511e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    width: 30%; 
+}
+
+.button {
     background-color: #f4511e;
     color: white;
     padding: 14px 20px;
@@ -84,25 +83,6 @@ h2 {
     width: 100%;
 }
 
-button:hover {
+.button:hover {
     opacity: 0.9;
-}
-
-// -----------------------
-
-.login-form{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-button {
-    background-color: #f4511e;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
 }

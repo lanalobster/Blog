@@ -1,19 +1,22 @@
+<div class="main-block">
+    <div class="central-block">
+        <%= form_for(@article, :html => {class: "create-form", role: "form"}) do |form| %>
+          
+            <div class="form-group">
+                <div class="label">
+                    <%= form.label :title %>
+                </div>
+                <%= form.text_field :title, class: "form-control", placeholder: "Enter title of the article", autofocus: true %>
+            </div>
 
-<div class="container">
-  <h1 class="page-title">Create a new article</h1>
-   <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |form| %>
-    <div class="form-group control-label">
-      <%= form.label :title %>
+            <div class="form-group">
+                <div class="label">
+                    <%= form.label :text %>
+                </div>
+                <%= form.text_area :text, rows: 10, class: "form-control", placeholder: "Enter text of the article" %>
+            </div>  
+            <%= form.submit "Create", class: 'create-button' %>
+            
+        <% end %>
     </div>
-    <div class="form-group">
-      <%= form.text_field :title, class: "form-control", placeholder: "Title of the article", autofocus: true %>
-    </div>
-    <div class="form-group control-label">
-      <%= form.label :text %>
-    </div>
-    <div class="form-group">
-      <%= form.text_area :text, rows: 10, class: "form-control", placeholder: "Text of the article" %>
-    </div>
-    <%= form.submit class: 'btn btn-primary btn-large' %>
-   <% end %>
-</div>
+</div>  
