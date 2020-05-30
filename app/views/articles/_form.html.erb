@@ -15,8 +15,8 @@
                 </div>
                 <%= form.text_area :text, rows: 10, class: "form-control", placeholder: "Enter text of the article" %>
             </div>  
-            <%= form.submit "Create", class: 'create-button' %>
-            
+            <%= form.submit(@article.new_record? ? "Create" : "Save changes", class: 'create-button') %>
+
         <% end %>
     </div>
 </div>  

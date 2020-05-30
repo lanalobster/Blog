@@ -2,12 +2,15 @@
   <%= link_to "MyBlog", root_path, class: "navbar-brand", id: "logo" %>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-        <li><%= link_to "My Articles", articles_path, class: "nav-link" %></li>
+        <li><%= link_to "Users", users_path, class: "nav-link" %></li>
+        <li><%= link_to "Articles", articles_path, class: "nav-link" %></li>
         <li><%= link_to "Create an Article", new_article_path, class: "nav-link" %></li>
     </ul>
     <ul class="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
         <% if logged_in? %>
-          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+          <% @user = User.find(session[:user_id]) %>
+          <li><%= link_to (gravatar_for @user, size: 50), user_path(@user) %></li>
+          <li><%= link_to "Log out", logout_path, method: :delete, class: "nav-link" %></li>
         <% else %>
           <li><%= link_to "Log in", login_path, class: "nav-link" %></li>
           <li><%= link_to "Sign up", new_user_path, class: "nav-link" %></li>

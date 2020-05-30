@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
  
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 5)
+    @articles = Article.paginate(page: params[:page], per_page: 3)
   end
  
   def show
@@ -31,8 +31,10 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   
     if @article.update(article_params)
+      flash[:notice] = "Article was updated"
       redirect_to @article
     else
+      flash[:notice] = "Article was not updated"
       render 'edit'
     end
   end
@@ -40,7 +42,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-  
+    flash[:notice] = "Article was deleted"
     redirect_to articles_path
   end
 
