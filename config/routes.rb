@@ -15,4 +15,14 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+  class OnlyAjaxRequest
+    def matches?(request)
+      request.xhr?
+    end
+  end
+
+  # resources :users do
+    post 'generate_username' => 'users#generate_username', constraint: OnlyAjaxRequest.new  
+  # end
+  
 end

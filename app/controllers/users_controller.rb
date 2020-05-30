@@ -36,8 +36,22 @@ class UsersController < ApplicationController
         end
     end
 
+    def generate_username
+        max_id = Username.maximum(:id)
+        random_id = rand(1..max_id)
+        username = Username.find(random_id)
+        random_id = rand(1..max_id)
+        username = Username.find(random_id)
+        time = Time.now
+        @username = username.adjective + "_"+ username.noun + "#{time.sec}"
+        respond_to do |format|
+           format.js
+        end
+    end
+
     private
     def user_params
         params.require(:user).permit(:username, :email, :password)
     end
+
 end
