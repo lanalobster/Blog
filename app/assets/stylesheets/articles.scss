@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.article-main-block {
+    width: 100vw;
+    height: 700px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .card {
     margin: 0.5em;
     background-color: white;
@@ -45,14 +53,6 @@
 .listing {
     list-style: none;
     padding-left: 0;
-}
-
-h2 {
-    align-self: center;
-    color:white;
-    font-family: 'Lora', Light;
-    font-size: 40px;
-    padding-top: 10px;
 }
 
 form{

@@ -29,10 +29,15 @@ body{
     text-decoration: none;
 }
 
-.page-title {
-    text-align: center;
-    margin: 0.5em;
+.navbar-toggler-icon {
+    color: white;
 }
 
-
+.page-title {
+    align-self: center;
+    color:white;
+    font-family: 'Lora', Light;
+    font-size: 40px;
+    padding-top: 10px;
+}
 

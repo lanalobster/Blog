@@ -26,14 +26,6 @@
     height: auto;
 }
 
-h2 {
-    align-self: center;
-    color:white;
-    font-family: 'Lora', Light;
-    font-size: 40px;
-    padding-top: 10px;
-}
-
 form{
     display:flex;
     flex-direction: column;
@@ -64,6 +56,7 @@ form{
 }
 
 .generate-button{
+    align-content: center;
     align-self: flex-end;
     background-color: #f4511e;
     color: white;
@@ -73,6 +66,11 @@ form{
     width: 30%; 
 }
 
+.generate-button:hover{
+    text-decoration: none;
+    color: white;
+    opacity: 0.9;
+}
 .button {
     background-color: #f4511e;
     color: white;
@@ -86,3 +84,34 @@ form{
 .button:hover {
     opacity: 0.9;
 }
+
+.card {
+    min-width: 350px;
+    margin: 0.5em;
+    background-color: white;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-link {
+    color: #222222;
+}
+
+.user-link:hover {
+    color: #222222;
+    text-decoration: none;
+}
+
+.user-body {
+    border-top: 1px solid #eaeaea;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.user-title {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
