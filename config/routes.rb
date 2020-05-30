@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
   
   resources :articles
-  
-  root 'pages#index'
-
+  resources :users
+  resources :users, except: [:new]
   resources :articles do
     resources :comments
   end
-
-  resources :users
-
-  get 'about', to: 'pages#about'
-
-  get 'signup', to: 'users#new'
   
-  resources :users, except: [:new]
+  root 'pages#index'
+  get 'welcome/index'
+  get 'about', to: 'pages#about'
+  get 'signup', to: 'users#new'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+
 end

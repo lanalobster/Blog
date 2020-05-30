@@ -1,0 +1,108 @@
+.body{
+    background-color: #a62500;
+    margin: 0;
+    padding: 0;
+}
+
+.main-block {
+    width: 100vw;
+    height: 800px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.central-block {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    width: auto;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.5);    
+    padding: 3vw;
+    height: auto;
+}
+
+
+h2 {
+    align-self: center;
+    color:white;
+    font-family: 'Lora', Light;
+    font-size: 40px;
+    padding-top: 10px;
+}
+
+.registration-form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nick-line{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.generate-button{
+    align-self: flex-end;
+    background-color: #f4511e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    width: 30%; 
+}
+
+.form-control {
+    width: 30vw;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.label{
+    font-family: 'Ubuntu', light italic;
+    font-size: 20px;
+    color: white;
+}
+
+.registration-button {
+    background-color: #f4511e;
+    color: white;
+    padding: 14px 20px;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+// -----------------------
+
+.login-form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-button {
+    background-color: #f4511e;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
