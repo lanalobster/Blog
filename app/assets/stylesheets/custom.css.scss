@@ -5,6 +5,8 @@ body{
     background-image: url("blog-background.jpg");
     background-size: cover; 
 }
+
+//nav-bar style
 .bg-custom {
     background-color: #222222;
 }
@@ -33,6 +35,7 @@ body{
     color: white;
 }
 
+//styles of titles
 .page-title {
     align-self: center;
     color:white;
@@ -41,3 +44,85 @@ body{
     padding-top: 10px;
 }
 
+h3.info {
+    align-self: center;
+    color:white;
+    font-family: 'Lora', Light;
+    padding-top: 10px;
+}
+
+//pagination style
+.pagination-block {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination {
+    cursor: default;
+    align-self: center;
+}
+
+.pagination a, .pagination span, .pagination em {
+    background-color: white;
+    padding: 0.2em 0.5em;
+    display: block;
+    margin-right: 1px; 
+}
+
+.pagination .disabled {
+    color: #999999;
+    border: 1px solid #dddddd; 
+}
+
+.pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2e6ab1;
+    color: white;
+    border: 1px solid #2e6ab1; 
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #105cb6;
+    border: 1px solid #9aafe5; 
+}
+
+.pagination a:hover, .pagination a:focus 
+{
+    color: #000033;
+    border-color: #000033;
+}
+
+.pagination .page_info
+ {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; 
+}
+   
+.pagination .page_info b {
+    color: #000033;
+    background: #6aa6ed;
+    padding: 0.1em 0.25em; 
+}
+
+.pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; 
+}
+
+* html .pagination {
+    height: 1%;
+ }
+
+*:first-child + html .pagination {
+    overflow: hidden;
+ }

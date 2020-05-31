@@ -3,6 +3,10 @@
 
 <%= render 'shared/article', obj: @articles %>
 
-<div align="center">
-  <%= will_paginate %>
+<div class="container">
+    <div class="row display-flex">
+      <div class="col pagination-block">
+            <%= will_paginate %> 
+      </div>
+    </div>
 </div>

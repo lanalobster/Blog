@@ -1,3 +1,8 @@
+<% if obj.empty? %>
+<h3 class="info" align="center"><%= "No Articles yet =(" %><h3>
+<% end %>
+
+
 <% obj.each do |article| %>
 <div class="container ">
   <div class="row">

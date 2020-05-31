@@ -1,14 +1,11 @@
-<h1 align="center">Welcome to <%= @user.username %>'s page</h1>
-<div class="row">
- <div class="col-md-4 col-md-offset-4 center">
-  <%= gravatar_for @user, size: 150 %>
- </div>
-</div>
-
-<h4 align="center"><%= @user.username %>'s articles</h4>
+<h2 align="center" class="page-title"><%= @user.username %>'s Articles</h2>
 
 <%= render 'shared/article', obj: @user.articles %>  
 
-<div align="center">
- <%= will_paginate @user_articles %>
+<div class="container">
+    <div class="row display-flex">
+      <div class="col pagination-block">
+            <%= will_paginate @user_articles%> 
+      </div>
+    </div>
 </div>

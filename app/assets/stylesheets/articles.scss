@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+//form style
 .article-main-block {
     width: 100vw;
     height: 700px;
@@ -10,6 +11,43 @@
     align-items: center;
 }
 
+form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-form .form-control {
+    width: 70vw;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.label{
+    font-family: 'Ubuntu', light italic;
+    font-size: 20px;
+    color: white;
+}
+
+.create-button {
+    background-color: #f4511e;
+    color: white;
+    padding: 14px 20px;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}
+
+.create-button:hover {
+    opacity: 0.9;
+}
+
+//article style
 .card {
     margin: 0.5em;
     background-color: white;
@@ -53,40 +91,4 @@
 .listing {
     list-style: none;
     padding-left: 0;
-}
-
-form{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.create-form .form-control {
-    width: 70vw;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-.label{
-    font-family: 'Ubuntu', light italic;
-    font-size: 20px;
-    color: white;
-}
-
-.create-button {
-    background-color: #f4511e;
-    color: white;
-    padding: 14px 20px;
-    margin: 20px 0;
-    border: none;
-    cursor: pointer;
-    width: 50%;
-}
-
-.create-button:hover {
-    opacity: 0.9;
 }
