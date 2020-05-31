@@ -19,7 +19,7 @@ SQLite3 version: 3.31.1
 
 Project was stylized with Bootstrap 4
 
-Please run rails db:seeds to enable username generation
+Please run rails db:seed to enable username generation
 
  
 

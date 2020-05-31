@@ -23,7 +23,8 @@ class UsersController < ApplicationController
             render 'new'
         else
             if @user.save
-                flash[:success] = "Welcome to MyBlog! #{@user.username} Now log in please!"
+                flash[:success] = "Welcome to MyBlog! #{@user.username}"
+                session[:user_id] = User.last.id
                 redirect_to articles_path
             else
                 render 'new'
@@ -49,19 +50,25 @@ class UsersController < ApplicationController
     def destroy
         @user = User.find(params[:id])
         @user.destroy
+        session[:user_id] = nil
         flash[:notice] = "Profile was deleted"
-        redirect_to articles_path
+        redirect_to root_path
+        # redirect_to session_path(@session) method: :delete
     end
 
     def generate_username
-        max_id = Username.maximum(:id)
-        random_id = rand(1..max_id)
-        username = Username.find(random_id)
-        @username = username.adjective
-        random_id = rand(1..max_id)
-        username = Username.find(random_id)
-        time = Time.now
-        @username += "_"+ username.noun + "#{time.sec}"
+        if(Username.any?)
+            max_id = Username.maximum(:id)
+            random_id = rand(1..max_id)
+            username = Username.find(random_id)
+            @username = username.adjective
+            random_id = rand(1..max_id)
+            username = Username.find(random_id)
+            time = Time.now
+            @username += "_"+ username.noun + "#{time.sec}"
+        else
+            @username = "Please run rails db:seed for this function to work"
+        end
         respond_to do |format|
            format.js
         end
