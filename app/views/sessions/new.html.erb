@@ -18,8 +18,8 @@
 
             <%= f.submit "Log in", class: 'button' %>
 
-            <h3 class="info">Don't have a profile?<h3>
-                <li><%= link_to "Sign up!", new_user_path, class: "nav-link" %></li>
+             <%= f.label :"Don't have a profile?", style: "color:#FFFFFF" %> 
+                <%= link_to "Sign up!", new_user_path, class: "nav-link" %>
          <% end %>
     </div>
 </div>  

@@ -17,15 +17,16 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(user_params)
-        if user_params[:password] != user_params[:repeat_password]
+         @user = User.new(user_params)
+        if user_repeat_params[:password] != user_repeat_params[:repeat_password]
             flash[:notice] = "Passwords don't match!"
-            render 'edit'
+            render 'new'
         else
             if @user.save
-                flash[:success] = "Welcome to MyBlog! #{@user.username}"
+                flash[:success] = "Welcome to MyBlog! #{@user.username} Now log in please!"
                 redirect_to articles_path
             else
+                flash[:success] = "Count;tt to MyBlog! #{@user.username}"
                 render 'new'
             end
         end
@@ -33,8 +34,9 @@ class UsersController < ApplicationController
     
     def update
         @user = User.find(params[:id])
-        if user_params[:password] != user_params[:repeat_password]
-            flash[:notice] = "Passwords don't match!"
+        if user_repeat_params[:password] != user_repeat_params[:repeat_password]
+            flash[:notice] = "Passwords don't match!" 
+            # + user_repeat_params[:password] + user_repeat_params[:repeat_password]
             render 'edit'
         else
             if @user.update(user_params)
@@ -62,6 +64,10 @@ class UsersController < ApplicationController
 
     private
     def user_params
+        params.require(:user).permit(:username, :email, :password)
+    end
+
+    def user_repeat_params
         params.require(:user).permit(:username, :email, :password, :repeat_password)
     end
 

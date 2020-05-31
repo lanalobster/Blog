@@ -32,9 +32,11 @@
 <% end %>
 
 <h3 class="info">Add a comment:</h3>
-<% if logged_in? %>
+<% if !logged_in? %>
   <h3 class="info">Sorry, you can't write comment as you haven't logged in =(</h3>
-  <%= link_to "Login in!", login_path, class: "btn btn-xs btn-primary" %>
+  <div class="login-block">
+    <%= link_to "Login in!", login_path, class: "btn btn-xs btn-primary" %>
+  </div>
 <% else %>
   <%= render 'comments/form' %>
 <% end %>

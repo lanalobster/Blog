@@ -44,11 +44,17 @@ body{
     padding-top: 10px;
 }
 
-h3.info {
+.info {
     align-self: center;
     color:white;
     font-family: 'Lora', Light;
     padding-top: 10px;
+}
+.index-info {
+    align-self: center;
+    color:white;
+    font-family: 'Lora', Light;
+    padding-bottom: 2px;
 }
 
 //pagination style
@@ -126,3 +132,24 @@ h3.info {
 *:first-child + html .pagination {
     overflow: hidden;
  }
+
+ //error style
+
+.error-card {
+    background-color:rgba(237, 67, 55, 0.8) !important;
+}
+.card-heading {
+    border-top: 1px solid #eaeaea;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.error-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    padding-left: 4px;
+}
+
+.error-body li {
+    font-size: 1em; 
+} 
