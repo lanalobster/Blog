@@ -1,4 +1,10 @@
 <h1 align="center" class="page-title">Users</h1>
+<h3 class="info" align="center"> Search by username:</h3>
+<%= form_tag(users_path, method: :get) do %>
+    <%= text_field_tag(:search, params[:search], class: 'form-control')%>
+    <%= submit_tag ("Search") , class: 'btn btn-primary'  %>
+<% end %>
+
 <div class="container">
     <div class="row display-flex">
         <% @users.each do |user| %>

@@ -7,4 +7,12 @@ class User < ActiveRecord::Base
     format: { with: VALID_EMAIL_REGEX }
     before_save { self.email = email.downcase }
     has_secure_password
+
+    def self.search(search)
+        if search
+            self.where("username LIKE ?", "#{search}%")
+        else
+            User.all
+        end
+    end
 end
