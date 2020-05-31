@@ -1,6 +1,17 @@
 
 <h2 align="center" class="page-title">Articles</h2>
 
+<h3 class="info" align="center"> Sort by:</h3>
+<%= form_with :url => articles_path, :method => "get", local: true do |form| %>
+  <div class="field">
+    <%= form.radio_button :sort_parameter, 'title', checked: params[:sort_parameter] == 'title'%> 
+    <%= label :sort_parameter_title, 'title', class:"label" %>
+    <%= form.radio_button :sort_parameter, 'time', checked: params[:sort_parameter] == 'time'  %>
+    <%= label :sort_parameter_time, 'time', class:"label"%>
+  </div>
+  <%= form.submit "Sort", class: 'btn btn-primary'  %>
+<% end %>
+
 <%= render 'shared/article', obj: @articles %>
 
 <div class="container">

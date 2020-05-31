@@ -1,7 +1,11 @@
 class ArticlesController < ApplicationController
  
-  def index
-    @articles = Article.paginate(page: params[:page], per_page: 3)
+  def index  
+    if params[:sort_parameter] == 'title'
+      @articles = Article.order(:title).paginate(page: params[:page], per_page: 3)
+    else
+      @articles = Article.order(:created_at).reverse_order.paginate(page: params[:page], per_page: 3)
+    end
   end
  
   def show

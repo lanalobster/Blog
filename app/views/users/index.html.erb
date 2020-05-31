@@ -5,35 +5,38 @@
     <%= submit_tag ("Search") , class: 'btn btn-primary'  %>
 <% end %>
 
-<div class="container">
-    <div class="row display-flex">
-        <% @users.each do |user| %>
-            <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+<% if @users.empty? %>
+    <h3 align="center" class="info">No users</h3>
+<% else %>
+    <div class="container">
+        <div class="row display-flex">
+            <% @users.each do |user| %>
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
 
-            <%= link_to user_path(user), class: "user-link" do %>    
-                <div class="user-title card-header">
-                    <%= gravatar_for(user, size: 30)%>
-                    <%= user.username %>
+                <%= link_to user_path(user), class: "user-link" do %>    
+                    <div class="user-title card-header">
+                        <%= gravatar_for(user, size: 30)%>
+                        <%= user.username %>
+                    </div>
+                    <div class="user-body card-body">
+                        <%= pluralize(user.articles.count, "article") if user.articles %>
+                    </div>
+                    <%= link_to "See Profile", user_path(user), class: "btn btn-primary" %>
+                <% end %>
+
                 </div>
-                <div class="user-body card-body">
-                    <%= pluralize(user.articles.count, "article") if user.articles %>
-                </div>
-                <%= link_to "See Profile", user_path(user), class: "btn btn-primary" %>
             <% end %>
-
-            </div>
-        <% end %>
+        </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row display-flex">
-      <div class="col pagination-block">
-            <%= will_paginate %> 
-      </div>
+    <div class="container">
+        <div class="row display-flex">
+        <div class="col pagination-block">
+                <%= will_paginate %> 
+        </div>
+        </div>
     </div>
-</div>
-
+<% end %>
 
 
                

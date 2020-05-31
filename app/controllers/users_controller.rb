@@ -26,7 +26,6 @@ class UsersController < ApplicationController
                 flash[:success] = "Welcome to MyBlog! #{@user.username} Now log in please!"
                 redirect_to articles_path
             else
-                flash[:success] = "Count;tt to MyBlog! #{@user.username}"
                 render 'new'
             end
         end
@@ -36,7 +35,6 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         if user_repeat_params[:password] != user_repeat_params[:repeat_password]
             flash[:notice] = "Passwords don't match!" 
-            # + user_repeat_params[:password] + user_repeat_params[:repeat_password]
             render 'edit'
         else
             if @user.update(user_params)
@@ -46,6 +44,13 @@ class UsersController < ApplicationController
                 render 'edit'
             end
         end
+    end
+
+    def destroy
+        @user = User.find(params[:id])
+        @user.destroy
+        flash[:notice] = "Profile was deleted"
+        redirect_to articles_path
     end
 
     def generate_username

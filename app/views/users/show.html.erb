@@ -1,5 +1,6 @@
 <% if @user == current_user%>
   <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %>
+  <%= link_to "Delete Profile", article_path(@user), method: :delete, data: { confirm: "Are you sure you want to delete the profile?"}, class: "btn btn-xs btn-danger" %>
   <h2 align="center" class="page-title">Your Articles</h2>
 <% else %>
   <h2 align="center" class="page-title"><%= @user.username %>'s Articles</h2>

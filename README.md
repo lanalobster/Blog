@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project name: MyBlog
 
-Things you may want to cover:
+Project description: 
+MyBlog - an elegant blog made with love. 
+Any user can see all users, articles and comments. Sign up and login available with password generation.
+Also it's possible to search users by username and sort articles by time and title.
+Logged in users can edit/delete profiles, modify their articles and delete their comments. 
+I had a pleasant experience creating it! 
 
-* Ruby version
+Ruby version: 2.6.6
 
-* System dependencies
+Rails version: 6.0.3.1
 
-* Configuration
+Databse: sqlite3 
 
-* Database creation
+SQLite3 version: 3.31.1
 
-* Database initialization
+Project was stylized with Bootstrap 4
 
-* How to run the test suite
+Please run rails db:seeds to enable username generation
 
-* Services (job queues, cache servers, search engines, etc.)
+ 
 
-* Deployment instructions
-
-* ...

@@ -1,10 +1,16 @@
 class CommentsController < ApplicationController
 
-  # def new
-  #   @comment = Comment.new
-  # end
+  def new
+    @comment = Comment.new
+  end
 
   def edit
+    @article = Article.find(params[:article_id])
+    @comment = @article.comments.find(params[:id])
+  end
+
+  
+  def show
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
   end
