@@ -7,7 +7,9 @@
     <ul class="navbar-nav mr-auto">
         <li><%= link_to "Users", users_path, class: "nav-link" %></li>
         <li><%= link_to "Articles", articles_path, class: "nav-link" %></li>
-        <li><%= link_to "Create an Article", new_article_path, class: "nav-link" %></li>
+        <% if logged_in? %>
+          <li><%= link_to "Create an Article", new_article_path, class: "nav-link" %></li>
+        <% end %>
     </ul>
     <ul class="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
         <% if logged_in? %>

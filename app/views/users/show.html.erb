@@ -1,5 +1,9 @@
-<h2 align="center" class="page-title"><%= @user.username %>'s Articles</h2>
-
+<% if @user == current_user%>
+  <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %>
+  <h2 align="center" class="page-title">Your Articles</h2>
+<% else %>
+  <h2 align="center" class="page-title"><%= @user.username %>'s Articles</h2>
+<% end %>
 <%= render 'shared/article', obj: @user.articles %>  
 
 <div class="container">
@@ -9,3 +13,4 @@
       </div>
     </div>
 </div>
+
